@@ -2,22 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+    <title>Goit-js-hw-11</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <form class="form">
+        <input type="text" class="fieldInput" name="inpImg" placeholder="Search images">
+        <button type="submit" class="btm">Search</button>
+      </form>
+      <ul class="gallery">
+        <!-- <li class="img-item">
+          <a href="images/image1.jpg">
+            <img class="img-chang" src="images/thumbs/thumb1.jpg" alt="" title=""/>
+          </a>
+          <div class="img-info">
+            <span>Likes: <br> ${user.}</span>
+            <span>Views<br> ${user.}</span>
+            <span>Comments<br> ${user.}</span>
+            <span>Downloads<br> ${user.}</span>
+          </div>
+        </li> -->
+
+      </ul>
     </main>
-
-    <load src="./partials/footer.html" />
-
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>
