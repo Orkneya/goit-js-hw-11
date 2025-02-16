@@ -1,4 +1,4 @@
-import { onFormSubmit, refs} from "./pixabay-api";
+import { onFormSubmit, refs} from "./js/pixabay-api";
 
 refs.formSubmit.addEventListener('submit', onFormSubmit);
 
