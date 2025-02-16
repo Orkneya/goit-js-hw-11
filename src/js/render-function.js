@@ -59,6 +59,9 @@ export function renderUsers(users) {
       </li>`;
     })
     .join("");
+    // refs.container.innerHTML("");
+    // console.log(666, refs.container, "hello");
+    
   refs.container.insertAdjacentHTML("afterbegin",markup);
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',

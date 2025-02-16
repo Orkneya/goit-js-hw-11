@@ -27,32 +27,23 @@ const API_KEY = '48810135-3fc2af65eea4986756bc51882';
   console.log(111,params);
   
   const url = BASE_URl+"key="+API_KEY+"&q="+encodeURIComponent(name);
-  console.log(555,url);
-  fetch
+  // return axios.get(uBASE_URl,{params});
   fetch(url,{params})
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    console.log(9090,params.orientation);
-    
-    console.log(333,response);
+    // console.log(9090,params.orientation);
     return response.json();
     // Response handling
   })
   .then(data => {
     console.log(222,data.hits[2].largeImageURL);
-    console.log(223,data.hits[1].webformatURL);
-    console.log(233,data.hits[2].tags);
     console.log(543,data.hits);
     
     renderUsers(data.hits);
     // Data handling
   })
-  // .catch(error => {
-
-  //   console.log("Sorry, there are no images matching your search query. Please, try again!",error);
-  // });
   .catch(error=>{
     iziToast.show({
     message:"Sorry, there are no images matching your search query. Please, try again!",
@@ -81,8 +72,9 @@ export function onFormSubmit(e){
   }
 
   console.log(123,inputValue);
+    e.target.reset();
   searchImg(inputValue);
-  refs.formSubmit.reset;
+
 };
 // --------------
 // export function fetchUsers(e) {
