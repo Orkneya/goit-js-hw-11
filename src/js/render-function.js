@@ -5,39 +5,6 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import { refs } from './pixabay-api';
 
-// ------------------
-// function createItem({preview,original,description}){
-//   return `<li class="gallery-item">
-//     <a class="gallery-link" href="${original}">
-//       <img
-//         class="gallery-image"
-//         src="${preview}"
-//         data-source="${original}"
-//         alt="${description}"
-//       />
-//     </a>
-//   </li>`;
-//   };
-
-//   function CreateItems(items){
-//     return items.map(CreateItem).join('');
-//   }
-  
-//   conteiner.insertAdjacentHTML("beforeend", CreateItems(images));
-  // ------------------------
-  
-  // conteiner.addEventListener("click", event=> {
-  
-  //   event.preventDefault();
-  
-  //   if(event.target=== event.currentTarget) return;
-  
-  //   const liImg = event.target.dataset.source;
-  
-    // const instance = basicLightbox.create(`<img src= ${liImg} />`);
-    // instance.show();
-  // });
-
 export function renderUsers(users) {
   const markup = users
     .map((user) => {
@@ -47,7 +14,7 @@ export function renderUsers(users) {
         class="gallery-image"
         src="${user.webformatURL}"
         data-source="${user.largeImageURL}"
-        alt="${user.tags.split(',')[0]}"
+        alt="${user.tags.split(',',3)}"
       />
       </a>
         <div class="img-info">
@@ -59,8 +26,7 @@ export function renderUsers(users) {
       </li>`;
     })
     .join("");
-    // refs.container.innerHTML("");
-    // console.log(666, refs.container, "hello");
+
     
   refs.container.insertAdjacentHTML("afterbegin",markup);
   const lightbox = new SimpleLightbox('.gallery a', {
