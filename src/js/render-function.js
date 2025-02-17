@@ -6,6 +6,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import { refs } from './pixabay-api';
 
 export function renderUsers(users) {
+  const lightbox = new SimpleLightbox('.gallery a');
   const markup = users
     .map((user) => {
       return `<li class="gallery-item">
@@ -27,12 +28,9 @@ export function renderUsers(users) {
     })
     .join("");
 
-    
   refs.container.insertAdjacentHTML("afterbegin",markup);
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
+
+  lightbox.refresh(); 
 }
 // ------------------
  // data.hits[1].webformatURL

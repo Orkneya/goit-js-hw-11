@@ -36,9 +36,8 @@ const BASE_URl="https://pixabay.com/api/?";
     return response.json();
   })
   .then(data => {
-    setTimeout(function(){
     renderUsers(data.hits);
-    refs.loader.style.display = 'none';}, 1000);
+    refs.loader.style.display = 'none';
   })
   .catch(error=>{
     iziToast.show({
@@ -50,21 +49,4 @@ const BASE_URl="https://pixabay.com/api/?";
   });
  }
 // ------------------
-export function onFormSubmit(e){
-  e.preventDefault();
-  const inputValue = e.currentTarget.elements.inpImg.value;
-  if (inputValue === ""){
-    iziToast.show({
-      message:"Fill please all fields!",
-      position:"topCenter",
-      messageColor: 'white',
-      backgroundColor: "#cb4335",
-      });
-    return console.log("Fill please all fields!");
-  }
 
-  console.log(123,inputValue);
-    e.target.reset();
-  searchImg(inputValue);
-
-};
