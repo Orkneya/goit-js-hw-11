@@ -51,13 +51,7 @@ const BASE_URl="https://pixabay.com/api/?";
   })
   .catch(error=>{
     refs.loader.style.display = 'none';
-    iziToast.show({
-    message:"Sorry, there are no images matching your search query. Please, try again!",
-    position:"topRight",
-    messageColor: 'white',
-    backgroundColor: "#cb4335",
-    });
-    return console.log(error);
+    return console.log("Error:", error);
   });
  }
 // ------------------
