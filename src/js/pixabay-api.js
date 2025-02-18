@@ -36,16 +36,28 @@ const BASE_URl="https://pixabay.com/api/?";
     return response.json();
   })
   .then(data => {
+    if (data.hits.length === 0){
+      iziToast.show({
+        message:"Sorry, there are no images matching your search query. Please, try again!",
+        position:"topRight",
+        messageColor: 'white',
+        backgroundColor: "#cb4335",
+        });
+        refs.loader.style.display = 'none';
+        return console.log("Sorry, there are no images matching your search query. Please, try again!");
+    }
     renderUsers(data.hits);
     refs.loader.style.display = 'none';
   })
   .catch(error=>{
+    refs.loader.style.display = 'none';
     iziToast.show({
     message:"Sorry, there are no images matching your search query. Please, try again!",
     position:"topRight",
     messageColor: 'white',
     backgroundColor: "#cb4335",
     });
+    return console.log(error);
   });
  }
 // ------------------
