@@ -2,8 +2,7 @@
 import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-
-import { refs } from './pixabay-api';
+import { refs } from "../main";
 
 export function renderUsers(users) {
   const lightbox = new SimpleLightbox('.gallery a');
