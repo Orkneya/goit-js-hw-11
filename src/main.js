@@ -12,27 +12,15 @@ const mes1 ="Fill please all fields!";
 refs.formSubmit.addEventListener('submit', onFormSubmit);
 function onFormSubmit(e){
   const inputValue = e.currentTarget.elements.inpImg.value;
-  console.log(781, inputValue);
   e.preventDefault();
-
-  console.log(777, inputValue);
-
   if (inputValue === ""){
     showError(mes1);
     return console.log(mes1);
   }
-
-    console.log(778, inputValue);
-
     refs.loader.style.display = 'block';
     searchImg(inputValue);
-
-    console.log(779, inputValue);
-
     refs.loader.style.display = 'none';
     e.target.reset();
-
-    console.log(780, inputValue);
 };
 
 export function showError(msg){

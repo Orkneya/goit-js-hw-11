@@ -20,14 +20,12 @@ const mes2 = "Sorry, there are no images matching your search query. Please, try
     orientation : "horizontal",
     safesearch : true,
   });
-
   refs.container.innerHTML = '';
-
   return axios.get(`${BASE_URl}${params}`)
     .then(response=>{
       if (response.data.hits.length === 0){
       showError(mes2);
-        return console.log(345,mes2);
+        return console.log(mes2);
       } 
       renderUsers(response.data.hits);
     })
