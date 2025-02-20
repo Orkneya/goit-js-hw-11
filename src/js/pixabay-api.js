@@ -23,10 +23,10 @@ const mes2 = "Sorry, there are no images matching your search query. Please, try
   refs.container.innerHTML = '';
   return axios.get(`${BASE_URl}${params}`)
     .then(response=>{
-      if (response.data.hits.length === 0){
-      showError(mes2);
-        return console.log(mes2);
-      } 
+      // if (response.data.hits.length === 0){
+      // showError(mes2);
+      //   return console.log(mes2);
+      // } 
       renderUsers(response.data.hits);
     })
     .catch(error=>{
