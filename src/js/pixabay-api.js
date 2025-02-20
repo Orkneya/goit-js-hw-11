@@ -10,7 +10,6 @@ import { refs, showError } from '../main';
 
 const API_KEY = '48810135-3fc2af65eea4986756bc51882';
 const BASE_URl="https://pixabay.com/api/?";
-const mes2 = "Sorry, there are no images matching your search query. Please, try again!";
 
  export function searchImg(name){
   const params = new URLSearchParams({
@@ -20,26 +19,14 @@ const mes2 = "Sorry, there are no images matching your search query. Please, try
     orientation : "horizontal",
     safesearch : true,
   });
-  refs.container.innerHTML = '';
   return axios.get(`${BASE_URl}${params}`)
-    .then(response=>{
-      if (response.data.hits.length === 0){
-      showError(mes2);
-        return console.log(mes2);
-      } 
-      renderUsers(response.data.hits);
-    })
-    .catch(error=>{
-      showError(mes2);
-      return console.log("Error:", error);
-    });
   }
 
   // return fetch(`${BASE_URl}${params}`)
   // .then(response => {
-  //   if (!response.ok) {
-  //     throw new Error(`HTTP error! Status: ${response.status}`);
-  //   }
+    // if (!response.ok) {
+    //   throw new Error(`HTTP error! Status: ${response.status}`);
+    // }
   //   return response.json();
   // })
   // .then(data => {
